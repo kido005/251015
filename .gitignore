@@ -1,0 +1,15 @@
+# Python venv
+.venv/
+
+# Streamlit cache directories
+car_picker/.cache/
+car_picker/.thumbnails/
+car_picker/__pycache__/
+
+# Ignore large image dataset
+car_picker/data/
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
