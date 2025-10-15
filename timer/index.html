@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 타이머</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app__header">
+            <h1>현재 시각</h1>
+            <p class="app__subtitle">지금의 순간을 확인하세요</p>
+        </header>
+        <section class="clock" aria-live="polite">
+            <time id="clock-time" class="clock__time" datetime=""></time>
+            <p id="clock-date" class="clock__date" aria-hidden="true"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

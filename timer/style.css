@@ -1,0 +1,68 @@
+:root {
+    color-scheme: light dark;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #4e54c8, #1f1c2c);
+    color: #f5f6fa;
+}
+
+.app {
+    padding: 3rem clamp(1.5rem, 4vw, 4rem);
+    border-radius: 24px;
+    background-color: rgba(15, 15, 25, 0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    max-width: min(90vw, 480px);
+}
+
+.app__header h1 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.app__subtitle {
+    margin: 0.5rem 0 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    opacity: 0.7;
+}
+
+.clock {
+    margin-top: 2.5rem;
+}
+
+.clock__time {
+    display: block;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.clock__date {
+    margin-top: 1rem;
+    font-size: clamp(1rem, 2.8vw, 1.4rem);
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+    .app {
+        padding: 2.5rem 1.5rem;
+    }
+}
