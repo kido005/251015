@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="ocean" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020b1a"/>
+      <stop offset="100%" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58d3ff"/>
+      <stop offset="100%" stop-color="#22b2d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#ocean)"/>
+  <g fill="url(#land)" opacity="0.75">
+    <path d="M70 118 L118 90 L190 88 L230 56 L300 74 L312 120 L270 152 L220 142 L205 166 L236 204 L176 228 L110 206 L74 164 Z"/>
+    <path d="M222 210 L268 198 L300 230 L288 276 L260 322 L238 360 L204 320 Z"/>
+    <path d="M338 86 L378 62 L442 74 L470 102 L512 82 L554 104 L524 132 L488 142 L472 168 L506 198 L474 244 L424 276 L394 240 L360 216 L338 188 Z"/>
+    <path d="M524 94 L584 74 L642 94 L700 118 L742 140 L762 172 L726 218 L664 212 L618 232 L598 264 L548 234 L520 198 Z"/>
+    <path d="M648 268 L696 268 L726 286 L716 320 L676 332 L638 310 Z"/>
+    <path d="M498 276 L534 270 L560 298 L544 324 L510 320 Z"/>
+    <path d="M144 76 L196 46 L220 52 L190 94 Z"/>
+  </g>
+  <g fill="#9ef1ff" opacity="0.4">
+    <circle cx="620" cy="116" r="8"/>
+    <circle cx="282" cy="120" r="6"/>
+    <circle cx="456" cy="112" r="5"/>
+  </g>
+</svg>

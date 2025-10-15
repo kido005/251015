@@ -3,18 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실시간 타이머</title>
+    <title>월드 타임 트래커</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="app">
+    <div class="background" aria-hidden="true">
+        <img src="assets/world-map.svg" alt="" class="background__map">
+        <div class="background__glow"></div>
+    </div>
+    <main class="app" aria-live="polite">
         <header class="app__header">
-            <h1>현재 시각</h1>
-            <p class="app__subtitle">지금의 순간을 확인하세요</p>
+            <div class="app__top">
+                <div class="timezone">
+                    <h1 id="city-name">서울, 대한민국</h1>
+                    <p id="timezone-label" class="timezone__label">한국 표준시 (GMT+09:00)</p>
+                </div>
+                <div class="app__controls">
+                    <button id="language-toggle" class="control-button" type="button" aria-label="언어 변경">EN</button>
+                </div>
+            </div>
+            <p id="subtitle" class="app__subtitle">지금의 순간을 확인하세요</p>
         </header>
         <section class="clock" aria-live="polite">
-            <time id="clock-time" class="clock__time" datetime=""></time>
-            <p id="clock-date" class="clock__date" aria-hidden="true"></p>
+            <div class="clock__time-wrapper">
+                <span id="clock-ampm" class="clock__ampm">AM</span>
+                <time id="clock-time" class="clock__time" datetime="">12:00:00</time>
+                <span id="clock-ms" class="clock__ms">.000</span>
+            </div>
+            <p id="clock-date" class="clock__date" aria-live="off"></p>
+        </section>
+        <section class="map" aria-labelledby="map-heading">
+            <div class="map__header">
+                <h2 id="map-heading" class="map__heading">주요 도시</h2>
+                <p id="map-instruction" class="map__instruction">지도에서 도시를 선택해 타임존을 변경하세요.</p>
+            </div>
+            <div class="map__viewport" role="group" aria-labelledby="map-heading map-instruction">
+                <img src="assets/world-map.svg" alt="" aria-hidden="true" class="map__image">
+                <div class="map__day-night" id="map-day-night" aria-hidden="true"></div>
+                <ul class="map__cities" aria-label="도시 선택">
+                    <li>
+                        <button class="map__city" type="button" data-city-id="los-angeles" style="--x:18; --y:58;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">로스앤젤레스</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="new-york" style="--x:30; --y:45;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">뉴욕</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="saopaulo" style="--x:35; --y:68;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">상파울루</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="london" style="--x:48; --y:34;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">런던</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="paris" style="--x:50; --y:36;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">파리</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="dubai" style="--x:59; --y:44;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">두바이</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="mumbai" style="--x:63; --y:49;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">뭄바이</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="seoul" style="--x:75; --y:44;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">서울</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="tokyo" style="--x:78; --y:45;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">도쿄</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="map__city" type="button" data-city-id="sydney" style="--x:84; --y:72;">
+                            <span class="map__dot"></span>
+                            <span class="map__label">시드니</span>
+                            <span class="map__status" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <script src="script.js"></script>
